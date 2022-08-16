@@ -172,6 +172,7 @@ class _SIFormState extends State<SIForm> {
                       children: <Widget>[
                         Expanded(
                           child: RaisedButton(
+                            elevation: 50.0,
                             color: Colors.blue,
                             textColor: Theme.of(context).primaryColorDark,
                             child: Text(
@@ -183,7 +184,8 @@ class _SIFormState extends State<SIForm> {
                                 if (formKey.currentState!.validate()) {
                                   this.displayResult = _calculateTotalReturns();
                                 }
-                              });
+                              }
+                              );
                             },
                           ),
                         ),
@@ -192,6 +194,7 @@ class _SIFormState extends State<SIForm> {
                         ),
                         Expanded(
                           child: RaisedButton(
+                            elevation: 50.0,
                             color: Colors.blue,
                             textColor: Theme.of(context).primaryColorDark,
                             child: Text(
@@ -252,8 +255,12 @@ class _SIFormState extends State<SIForm> {
 
       String result =
           'After $term years, your investment will be worth $totalAmountPayable $_currentItemSelected';
+      _principleErrorText = null;
+      _roiErrorText = null;
+      _termErrorText = null;
       return result;
-    } else {
+    }
+    else{
       return '';
     }
   }
